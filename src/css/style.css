@@ -3,6 +3,7 @@
   padding: 0;
   border: none;
   outline: none;
+  overflow: hidden;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -43,4 +44,16 @@ body {
 
 .clock {
   font-size: 48pt;
+}
+
+@media (max-height: 84pt) {
+  body {
+    padding: 12px;
+    font-size: 9pt;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .clock {
+    font-size: 12pt;
+  }
 }
