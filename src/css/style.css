@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: none;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  color: white;
+  font-family: "JetBrains Mono";
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  font-size: 48pt;
+}

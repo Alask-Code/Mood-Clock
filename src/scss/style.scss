@@ -1,0 +1,17 @@
+@import "reset";
+
+* {
+  color: white;
+  font-family: "JetBrains Mono";
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  font-size: 48pt;
+}
