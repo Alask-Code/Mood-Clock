@@ -27,6 +27,7 @@ body {
   align-items: center;
 }
 
+.date,
 .clock,
 .phrase {
   background: linear-gradient(135deg, white, lightblue);
