@@ -25,4 +25,26 @@ body {
 .clock {
   font-size: 48pt;
 }
+@keyframes swithPhrase {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.phrase {
+  cursor: pointer;
+
+  &.animate {
+    animation-fill-mode: forwards;
+    animation: swithPhrase 0.5s ease-in-out alternate;
+  }
+}
 @import "compact";

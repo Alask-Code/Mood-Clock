@@ -46,14 +46,43 @@ body {
   font-size: 48pt;
 }
 
+@keyframes swithPhrase {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.phrase {
+  cursor: pointer;
+}
+.phrase.animate {
+  animation-fill-mode: forwards;
+  animation: swithPhrase 0.5s ease-in-out alternate;
+}
+
 @media (max-height: 84pt) {
   body {
     padding: 12px;
     font-size: 9pt;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 2fr 2fr 2fr;
+  }
+  .date {
+    justify-self: flex-start;
   }
   .clock {
     font-size: 12pt;
+  }
+  .phrase {
+    justify-self: flex-end;
   }
 }
