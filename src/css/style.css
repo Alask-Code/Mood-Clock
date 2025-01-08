@@ -30,7 +30,6 @@ body {
 .notes {
   gap: 6px;
   display: flex;
-  position: fixed;
   flex-direction: column;
 }
 .notes .label {
@@ -38,7 +37,8 @@ body {
   padding: 0px 12px;
 }
 .notes .notepad {
-  border: 1px solid rgb(255, 255, 255);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  overflow: scroll;
   border-radius: 12px;
   width: 320px;
   height: 500px;
@@ -51,8 +51,10 @@ body {
 .notes .notepad .add {
   display: flex;
   width: 100%;
+  position: sticky;
+  bottom: 0;
   border-radius: 6px;
-  border: 1px solid rgb(255, 255, 255);
+  border: 2px solid rgba(255, 255, 255, 0.25);
   background: rgba(0, 0, 0, 0.5);
 }
 .notes .notepad .add input {
