@@ -14,7 +14,7 @@ function App () {
   domPhrase.innerText = randomPhrase(badMoodPhrases);
 
   const domNotes = document.querySelector('.notes');
-  initNotes(domNotes);
+  // initNotes(domNotes); // Don't work as espected.
 
   domPhrase.onclick = () => {
     domPhrase.classList.toggle('animate');
