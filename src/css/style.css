@@ -4,7 +4,6 @@
   padding: 0;
   border: none;
   outline: none;
-  overflow: hidden;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -24,15 +23,49 @@ body {
 
 body {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
 }
 
 .notes {
-  display: none;
-  border: 2px solid rgb(255, 255, 255);
+  gap: 6px;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+}
+.notes .label {
+  font-size: 14pt;
+  padding: 0px 12px;
+}
+.notes .notepad {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 12px;
   width: 320px;
   height: 500px;
+  padding: 12px;
+  line-height: 20pt;
+}
+.notes .notepad .did {
+  text-decoration: line-through;
+}
+.notes .notepad .add {
+  display: flex;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0.5);
+}
+.notes .notepad .add input {
+  padding: 0px 6px;
+  background: transparent;
+  width: 100%;
+}
+.notes .notepad .add button {
+  cursor: pointer;
+  font-size: 18pt;
+  font-weight: 100;
+  padding: 0px 6px;
+  background: transparent;
 }
 
 .center {

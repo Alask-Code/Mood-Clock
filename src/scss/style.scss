@@ -6,14 +6,49 @@
 }
 body {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
 }
 .notes {
-  display: none;
-  border: 2px solid rgb(255, 255, 255);
-  width: 320px;
-  height: 500px;
+  gap: 6px;
+  display: flex;
+  position: fixed;
+
+  flex-direction: column;
+  .label {
+    font-size: 14pt;
+    padding: 0px 12px;
+  }
+  .notepad {
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 12px;
+    width: 320px;
+    height: 500px;
+    padding: 12px;
+    line-height: 20pt;
+    .did {
+      text-decoration: line-through;
+    }
+    .add {
+      display: flex;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid rgb(255, 255, 255);
+      background: rgba(0, 0, 0, 0.5);
+      input {
+        padding: 0px 6px;
+        background: transparent;
+        width: 100%;
+      }
+      button {
+        cursor: pointer;
+        font-size: 18pt;
+        font-weight: 100;
+        padding: 0px 6px;
+        background: transparent;
+      }
+    }
+  }
 }
 .center {
   display: flex;

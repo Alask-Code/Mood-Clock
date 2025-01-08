@@ -13,8 +13,8 @@ function App () {
   const domPhrase = document.querySelector('.phrase');
   domPhrase.innerText = randomPhrase(badMoodPhrases);
 
-  const domNotepad = document.querySelector('.notepad');
-  initNotes(domNotepad);
+  const domNotes = document.querySelector('.notes');
+  initNotes(domNotes);
 
   domPhrase.onclick = () => {
     domPhrase.classList.toggle('animate');
