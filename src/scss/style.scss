@@ -22,10 +22,9 @@ body {
     width: 320px;
     height: 500px;
     padding: 12px;
-    overflow: scroll;
     line-height: 20pt;
     border-radius: 12px;
-    border: 2px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid white;
     .did {
       text-decoration: line-through;
     }
@@ -35,12 +34,14 @@ body {
       display: flex;
       position: sticky;
       border-radius: 6px;
-      background: rgba(0, 0, 0, 0.5);
-      border: 2px solid rgba(255, 255, 255, 0.25);
+      border: 1px solid white;
       input {
         width: 100%;
         padding: 0px 6px;
         background: transparent;
+        &::placeholder {
+          color: white;
+        }
       }
       button {
         cursor: pointer;
