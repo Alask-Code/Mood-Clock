@@ -1,11 +1,3 @@
-const tasks = [{
-  did: true,
-  value: 'Already did'
-},
-{
-  did: false,
-  value: 'Needs to do'
-}];
 
 export default function initNotes (element) {
   const input = document.querySelector('.add input');
@@ -13,6 +5,11 @@ export default function initNotes (element) {
   const notepad = element.querySelector('.notepad');
   const addRow = document.querySelector('.add');
 
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+  tasks.forEach(task => {
+    updateState(notepad, task);
+  });
   function createTask (task) {
     const newTask = {
       id: tasks.length + 1,
@@ -32,7 +29,9 @@ export default function initNotes (element) {
     notes.forEach(note => {
       note.querySelector('input').onchange = () => {
         if (note.querySelector('input').checked) {
-          console.log(note);
+          tasks[note.id].did = true;
+          localStorage.setItem('tasks', JSON.stringify(tasks));
+
           note.classList.toggle('did');
         } else {
           note.classList.toggle('did');
@@ -46,6 +45,7 @@ export default function initNotes (element) {
 
     domTask.classList.add('note');
     domTask.classList.toggle(task.did ? 'did' : 'undid');
+    domTask.id = task.id;
     domTask.innerHTML = `
       <input type='checkbox' class='checker' ${task.did ? 'checked' : ''}  />
       ${task.value}
@@ -54,9 +54,7 @@ export default function initNotes (element) {
     element.insertBefore(domTask, addRow);
     registerToggler();
   }
-  tasks.forEach(task => {
-    updateState(notepad, task);
-  });
+
   registerAdder({ input, addButton });
   registerToggler();
 }
