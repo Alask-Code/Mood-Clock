@@ -23,8 +23,8 @@ body {
 
 body {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .notes {
@@ -37,55 +37,54 @@ body {
   padding: 0px 12px;
 }
 .notes .notepad {
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  overflow: scroll;
-  border-radius: 12px;
   width: 320px;
-  box-shadow: 0px 0px 12px lightblue;
   height: 500px;
   padding: 12px;
+  overflow: scroll;
   line-height: 20pt;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
 }
 .notes .notepad .did {
   text-decoration: line-through;
 }
 .notes .notepad .add {
-  display: flex;
-  width: 100%;
-  position: sticky;
   bottom: 0;
+  width: 100%;
+  display: flex;
+  position: sticky;
   border-radius: 6px;
-  border: 2px solid rgba(255, 255, 255, 0.25);
   background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.25);
 }
 .notes .notepad .add input {
+  width: 100%;
   padding: 0px 6px;
   background: transparent;
-  width: 100%;
 }
 .notes .notepad .add button {
   cursor: pointer;
   font-size: 18pt;
-  font-weight: 100;
   padding: 0px 6px;
+  font-weight: 100;
   background: transparent;
 }
 
 .center {
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .date,
 .clock,
 .phrase {
-  background: linear-gradient(135deg, white, lightblue);
+  color: transparent;
   -webkit-background-clip: text;
           background-clip: text;
-  color: transparent;
   filter: drop-shadow(0px 0px 6px lightblue);
+  background: linear-gradient(135deg, white, lightblue);
 }
 
 .date {
@@ -98,16 +97,16 @@ body {
 
 @keyframes swithPhrase {
   0% {
-    transform: translateY(0px);
     opacity: 1;
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
     opacity: 0;
+    transform: translateY(-10px);
   }
   100% {
-    transform: translateY(0px);
     opacity: 1;
+    transform: translateY(0px);
   }
 }
 .phrase {
