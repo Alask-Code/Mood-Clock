@@ -48,5 +48,6 @@ export default [
   'Comece de onde você está.',
   'Clareza gera confiança.',
   'Supere o ruído.',
-  'Desculpas não constroem impérios.'
+  'Desculpas não constroem impérios.',
+  'Se não da pra ser exemplo no resultado, seja no esforço.'
 ];
