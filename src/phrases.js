@@ -49,5 +49,5 @@ export default [
   'Clareza gera confiança.',
   'Supere o ruído.',
   'Desculpas não constroem impérios.',
-  'Se não da pra ser exemplo no resultado, seja no esforço.'
+  'Se não for exemplo no resultado, seja no esforço.'
 ];
