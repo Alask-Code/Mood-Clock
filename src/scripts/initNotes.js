@@ -1,60 +1,69 @@
-
 export default function initNotes (element) {
-  const input = document.querySelector('.add input');
-  const addButton = element.querySelector('.add button');
-  const notepad = element.querySelector('.notepad');
-  const addRow = document.querySelector('.add');
+  const tasks = loadNotes() || [];
 
-  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  const addNoteButton = element.querySelector('.add button');
+  const newNoteContent = element.querySelector('.add input');
+  const notepadContent = element.querySelector('.notepad');
 
-  tasks.forEach(task => {
-    updateState(notepad, task);
-  });
-  function createTask (task) {
-    const newTask = {
+  function loadNotes () {
+    const savedNotes = JSON.parse(sessionStorage.getItem('notes'));
+    return savedNotes ? savedNotes.filter(task => !task.did) : [];
+  }
+
+  function saveNotes () {
+    sessionStorage.setItem('notes', JSON.stringify(tasks));
+    updateState();
+  }
+
+  function addTask (content) {
+    tasks.push({
       id: tasks.length + 1,
       did: false,
-      value: task
-    };
-    tasks.push(newTask);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-    updateState(notepad, newTask);
+      content
+    });
+    saveNotes();
   }
 
-  function registerAdder ({ input, addButton }) {
-    addButton.onclick = () => { createTask(input.value); };
+  function updateTask (taskId) {
+    try {
+      const task = tasks.find(t => t.id === taskId);
+      if (task) {
+        task.did = !task.did; // Alterna o estado da tarefa
+        saveNotes(); // Salva após a atualização
+      }
+    } catch (error) {
+      console.error('Erro ao atualizar a tarefa');
+    }
   }
-  function registerToggler () {
-    const notes = notepad.querySelectorAll('.note');
-    notes.forEach(note => {
-      note.querySelector('input').onchange = () => {
-        if (note.querySelector('input').checked) {
-          tasks[note.id].did = true;
-          localStorage.setItem('tasks', JSON.stringify(tasks));
 
-          note.classList.toggle('did');
-        } else {
-          note.classList.toggle('did');
-        }
-      };
+  function updateState () {
+    const tasksElements = notepadContent.querySelectorAll('.task');
+    tasksElements.forEach(taskElement => taskElement.remove());
+
+    tasks.forEach(task => {
+      const taskElement = document.createElement('div');
+      taskElement.classList.add('task');
+      taskElement.innerHTML = `
+        <label>
+          <input type="checkbox" ${task.did ? 'checked' : ''}>
+          <span class="${task.did ? 'did' : ''}">${task.content}</span>
+        </label>
+      `;
+
+      const checkbox = taskElement.querySelector('input[type="checkbox"]');
+      checkbox.addEventListener('change', () => updateTask(task.id));
+
+      notepadContent.appendChild(taskElement);
     });
   }
 
-  function updateState (element, task) {
-    const domTask = document.createElement('div');
+  addNoteButton.onclick = () => {
+    const taskContent = newNoteContent.value.trim();
+    if (taskContent) {
+      addTask(taskContent);
+      newNoteContent.value = '';
+    }
+  };
 
-    domTask.classList.add('note');
-    domTask.classList.toggle(task.did ? 'did' : 'undid');
-    domTask.id = task.id;
-    domTask.innerHTML = `
-      <input type='checkbox' class='checker' ${task.did ? 'checked' : ''}  />
-      ${task.value}
-      `;
-
-    element.insertBefore(domTask, addRow);
-    registerToggler();
-  }
-
-  registerAdder({ input, addButton });
-  registerToggler();
+  updateState();
 }
