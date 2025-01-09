@@ -1,23 +1,31 @@
 export default function initTodo (element) {
   const toDos = loadToDos() || [];
 
-  const addToDoButton = element.querySelector('.add button');
   const newToDoInput = element.querySelector('.add input');
   const toDoList = element.querySelector('.todo-list');
 
   function loadToDos () {
     const savedtoDos = JSON.parse(localStorage.getItem('notes'));
-    return savedtoDos ? savedtoDos.filter(task => !task.did) : [];
+    return savedtoDos || [];
   }
 
   function saveToDos () {
-    localStorage.setItem('notes', JSON.stringify(toDos));
+    if (toDos.length === 0) {
+      localStorage.removeItem('notes');
+    } else {
+      const pendingToDos = toDos.filter(task => !task.did);
+      if (pendingToDos.length === 0) {
+        localStorage.removeItem('notes');
+      } else {
+        localStorage.setItem('notes', JSON.stringify(pendingToDos));
+      }
+    }
     updateState();
   }
 
   function addToDo (toDo) {
     toDos.push({
-      id: toDos.length + 1,
+      id: Date.now(),
       did: false,
       content: toDo
     });
@@ -26,6 +34,8 @@ export default function initTodo (element) {
 
   function updateToDo (toDoId) {
     try {
+      console.log(toDoId);
+
       const toDo = toDos.find(toDo => toDo.id === toDoId);
       if (toDo) {
         toDo.did = !toDo.did;
@@ -38,6 +48,7 @@ export default function initTodo (element) {
 
   function updateState () {
     const toDoElements = toDoList.querySelectorAll('.todo-item');
+    console.log('foi chamado');
     toDoElements.forEach(toDoElement => toDoElement.remove());
 
     toDos.forEach(toDo => {
@@ -55,6 +66,7 @@ export default function initTodo (element) {
     });
   }
 
+  const addToDoButton = element.querySelector('.add button');
   addToDoButton.onclick = () => {
     const taskContent = newToDoInput.value.trim();
     if (taskContent) {
@@ -63,6 +75,9 @@ export default function initTodo (element) {
       newToDoInput.focus();
     }
   };
-
+  const closeToDoPage = element.querySelector('.label');
+  closeToDoPage.onclick = () => {
+    toDoList.classList.toggle('hidden');
+  };
   updateState();
 }
