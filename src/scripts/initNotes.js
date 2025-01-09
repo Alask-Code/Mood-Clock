@@ -6,12 +6,12 @@ export default function initNotes (element) {
   const notepadContent = element.querySelector('.notepad');
 
   function loadNotes () {
-    const savedNotes = JSON.parse(sessionStorage.getItem('notes'));
+    const savedNotes = JSON.parse(localStorage.getItem('notes'));
     return savedNotes ? savedNotes.filter(task => !task.did) : [];
   }
 
   function saveNotes () {
-    sessionStorage.setItem('notes', JSON.stringify(tasks));
+    localStorage.setItem('notes', JSON.stringify(tasks));
     updateState();
   }
 

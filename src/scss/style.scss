@@ -24,7 +24,8 @@ body {
     padding: 12px;
     line-height: 20pt;
     border-radius: 12px;
-    border: 1px solid white;
+    background: transparentize(lightblue, 0.5);
+    border: 1px solid black;
     .did {
       text-decoration: line-through;
     }
@@ -34,7 +35,7 @@ body {
       display: flex;
       position: sticky;
       border-radius: 6px;
-      border: 1px solid white;
+      border: 1px solid black;
       input {
         width: 100%;
         padding: 0px 6px;

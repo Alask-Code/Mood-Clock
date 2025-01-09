@@ -42,7 +42,8 @@ body {
   padding: 12px;
   line-height: 20pt;
   border-radius: 12px;
-  border: 1px solid white;
+  background: rgba(173, 216, 230, 0.5);
+  border: 1px solid black;
 }
 .notes .notepad .did {
   text-decoration: line-through;
@@ -53,7 +54,7 @@ body {
   display: flex;
   position: sticky;
   border-radius: 6px;
-  border: 1px solid white;
+  border: 1px solid black;
 }
 .notes .notepad .add input {
   width: 100%;
