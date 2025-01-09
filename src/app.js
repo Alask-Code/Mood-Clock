@@ -2,7 +2,8 @@ import badMoodPhrases from './phrases.js';
 import initClock from './scripts/initClock.js';
 import initDate from './scripts/initDate.js';
 import randomPhrase from './scripts/randomPhrase.js';
-import initNotes from './scripts/initNotes.js';
+import initTodo from './scripts/initTodo.js';
+
 function App () {
   const domDate = document.querySelector('.date');
   initDate(domDate);
@@ -14,7 +15,7 @@ function App () {
   domPhrase.innerText = randomPhrase(badMoodPhrases);
 
   const domNotes = document.querySelector('.notes');
-  initNotes(domNotes);
+  initTodo(domNotes);
 
   domPhrase.onclick = () => {
     domPhrase.classList.toggle('animate');

@@ -1,4 +1,4 @@
-export default function initNotes (element) {
+export default function initTodo (element) {
   const tasks = loadNotes() || [];
 
   const addNoteButton = element.querySelector('.add button');
@@ -62,6 +62,7 @@ export default function initNotes (element) {
     if (taskContent) {
       addTask(taskContent);
       newNoteContent.value = '';
+      newNoteContent.focus();
     }
   };
 
