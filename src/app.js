@@ -27,7 +27,7 @@ function App () {
     }, 500);
   };
 
-  setInterval(() => { domPhrase.click(); }, 1000 * 60 * 5);
+  setInterval(() => { domPhrase.click(); }, 1000 * 60 * 2.5);
 
   if (!window.process) {
     document.body.style.background = "url('https://picsum.photos/id/17/1920/1080')";

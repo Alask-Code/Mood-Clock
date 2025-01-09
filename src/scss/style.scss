@@ -132,4 +132,14 @@ body {
     animation: swithPhrase 0.5s ease-in-out alternate;
   }
 }
+.information {
+  gap: 24px;
+  opacity: 0.5;
+  padding: 12px 24px;
+  width: 100%;
+  justify-content: end;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+}
 @import "compact";
