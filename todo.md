@@ -1,0 +1,4 @@
+- [ ] Change: Notes to ToDo
+- [ ] Feature: `Enter` keystroke
+- [ ] Feature: Click `Todo` to hide Todo List
+- [ ] Feature: Pomodoro Timer
