@@ -1,4 +1,7 @@
-- [ ] Change: Notes to ToDo
+- [x] Change: Notes to ToDo
+- [x] Change: Todo List UI
 - [ ] Feature: `Enter` keystroke
-- [ ] Feature: Click `Todo` to hide Todo List
+- [x] Feature: Click `Todo's` to hide Todo List
 - [ ] Feature: Pomodoro Timer
+- [ ] Feature: Change category of phrases
+- [ ] Localization
