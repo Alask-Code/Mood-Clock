@@ -14,7 +14,7 @@ function App () {
   const domPhrase = document.querySelector('.phrase');
   domPhrase.innerText = randomPhrase(badMoodPhrases);
 
-  const domNotes = document.querySelector('.notes');
+  const domNotes = document.querySelector('.todo');
   initTodo(domNotes);
 
   domPhrase.onclick = () => {

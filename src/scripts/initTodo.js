@@ -1,35 +1,35 @@
 export default function initTodo (element) {
-  const tasks = loadNotes() || [];
+  const toDos = loadToDos() || [];
 
-  const addNoteButton = element.querySelector('.add button');
-  const newNoteContent = element.querySelector('.add input');
-  const notepadContent = element.querySelector('.notepad');
+  const addToDoButton = element.querySelector('.add button');
+  const newToDoInput = element.querySelector('.add input');
+  const toDoList = element.querySelector('.todo-list');
 
-  function loadNotes () {
-    const savedNotes = JSON.parse(localStorage.getItem('notes'));
-    return savedNotes ? savedNotes.filter(task => !task.did) : [];
+  function loadToDos () {
+    const savedtoDos = JSON.parse(localStorage.getItem('notes'));
+    return savedtoDos ? savedtoDos.filter(task => !task.did) : [];
   }
 
-  function saveNotes () {
-    localStorage.setItem('notes', JSON.stringify(tasks));
+  function saveToDos () {
+    localStorage.setItem('notes', JSON.stringify(toDos));
     updateState();
   }
 
-  function addTask (content) {
-    tasks.push({
-      id: tasks.length + 1,
+  function addToDo (toDo) {
+    toDos.push({
+      id: toDos.length + 1,
       did: false,
-      content
+      content: toDo
     });
-    saveNotes();
+    saveToDos();
   }
 
-  function updateTask (taskId) {
+  function updateToDo (toDoId) {
     try {
-      const task = tasks.find(t => t.id === taskId);
-      if (task) {
-        task.did = !task.did; // Alterna o estado da tarefa
-        saveNotes(); // Salva após a atualização
+      const toDo = toDos.find(toDo => toDo.id === toDoId);
+      if (toDo) {
+        toDo.did = !toDo.did;
+        saveToDos();
       }
     } catch (error) {
       console.error('Erro ao atualizar a tarefa');
@@ -37,32 +37,30 @@ export default function initTodo (element) {
   }
 
   function updateState () {
-    const tasksElements = notepadContent.querySelectorAll('.task');
-    tasksElements.forEach(taskElement => taskElement.remove());
+    const toDoElements = toDoList.querySelectorAll('.todo-item');
+    toDoElements.forEach(toDoElement => toDoElement.remove());
 
-    tasks.forEach(task => {
-      const taskElement = document.createElement('div');
-      taskElement.classList.add('task');
-      taskElement.innerHTML = `
-        <label>
-          <input type="checkbox" ${task.did ? 'checked' : ''}>
-          <span class="${task.did ? 'did' : ''}">${task.content}</span>
-        </label>
+    toDos.forEach(toDo => {
+      const toDoElement = document.createElement('div');
+      toDoElement.classList.add('todo-item');
+      toDoElement.innerHTML = `
+          <input type="checkbox" ${toDo.did ? 'checked' : ''}>
+          <p class="${toDo.did ? 'did' : ''}">${toDo.content}</p>
       `;
 
-      const checkbox = taskElement.querySelector('input[type="checkbox"]');
-      checkbox.addEventListener('change', () => updateTask(task.id));
+      const checkbox = toDoElement.querySelector('input[type="checkbox"]');
+      checkbox.addEventListener('change', () => updateToDo(toDo.id));
 
-      notepadContent.appendChild(taskElement);
+      toDoList.appendChild(toDoElement);
     });
   }
 
-  addNoteButton.onclick = () => {
-    const taskContent = newNoteContent.value.trim();
+  addToDoButton.onclick = () => {
+    const taskContent = newToDoInput.value.trim();
     if (taskContent) {
-      addTask(taskContent);
-      newNoteContent.value = '';
-      newNoteContent.focus();
+      addToDo(taskContent);
+      newToDoInput.value = '';
+      newToDoInput.focus();
     }
   };
 

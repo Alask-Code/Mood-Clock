@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 * {
   margin: 0;
@@ -16,6 +17,20 @@ body {
   height: 100%;
 }
 
+@keyframes swithPhrase {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 * {
   color: white;
   font-family: "JetBrains Mono";
@@ -27,52 +42,89 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.notes {
+.todo {
   gap: 6px;
   display: flex;
   flex-direction: column;
 }
-.notes .label {
+.todo .label {
   font-size: 14pt;
   padding: 0px 12px;
 }
-.notes .notepad {
+.todo .todo-list {
   width: 320px;
   height: 500px;
-  padding: 12px;
-  line-height: 20pt;
+  line-height: 32pt;
   border-radius: 12px;
-  background: rgba(173, 216, 230, 0.5);
-  border: 1px solid black;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  overflow: auto;
 }
-.notes .notepad .did {
-  text-decoration: line-through;
-}
-.notes .notepad .add {
-  bottom: 0;
+.todo .todo-list .add {
+  padding: 12px;
+  top: 0;
   width: 100%;
   display: flex;
   position: sticky;
-  border-radius: 6px;
-  border: 1px solid black;
+  margin-bottom: 6px;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  background: black;
 }
-.notes .notepad .add input {
+.todo .todo-list .add input {
   width: 100%;
-  padding: 0px 6px;
+  padding: 6px 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 14pt;
+  border-right: none;
+  border-radius: 12px 0px 0px 12px;
   background: transparent;
 }
-.notes .notepad .add input::-moz-placeholder {
+.todo .todo-list .add input::-moz-placeholder {
   color: white;
 }
-.notes .notepad .add input::placeholder {
+.todo .todo-list .add input::placeholder {
   color: white;
 }
-.notes .notepad .add button {
+.todo .todo-list .add button {
   cursor: pointer;
-  font-size: 18pt;
-  padding: 0px 6px;
+  font-size: 24pt;
+  padding: 0px 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-left: none;
+  border-radius: 0px 12px 12px 0px;
   font-weight: 100;
   background: transparent;
+}
+.todo .todo-list .todo-item {
+  display: flex;
+  padding: 0px 12px;
+  font-size: 14pt;
+  gap: 9px;
+  align-items: center;
+}
+.todo .todo-list .todo-item p.did {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.todo .todo-list .todo-item input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.todo .todo-list .todo-item input[type=checkbox]:checked {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+}
+.todo .todo-list .todo-item input[type=checkbox]:checked::after {
+  content: "✔️";
+  color: white;
 }
 
 .center {
@@ -84,7 +136,8 @@ body {
 
 .date,
 .clock,
-.phrase {
+.phrase,
+.todo-item {
   color: transparent;
   background: linear-gradient(135deg, white, lightblue);
   -webkit-background-clip: text;
@@ -100,20 +153,6 @@ body {
   font-size: 48pt;
 }
 
-@keyframes swithPhrase {
-  0% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  50% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
 .phrase {
   cursor: pointer;
 }
