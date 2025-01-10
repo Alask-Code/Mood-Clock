@@ -2,6 +2,7 @@ export default function initPomodoro (element) {
   const startPauseButton = element.querySelector('.controls .start');
   const restartButton = element.querySelector('.controls .reset');
   const timer = element.querySelector('.remaining');
+  const closePomodoro = element.querySelector('.label');
 
   const initialTime = [25, 0];
   let timingOperator = [...initialTime];
@@ -69,6 +70,10 @@ export default function initPomodoro (element) {
 
   startPauseButton.onclick = () => handleStartPlayPause();
   restartButton.onclick = () => resetTimer();
+  closePomodoro.onclick = () => {
+    element.querySelector('.timer').classList.toggle('hidden');
+    console.log('aa');
+  };
 
   updateTimerDisplay();
 }
