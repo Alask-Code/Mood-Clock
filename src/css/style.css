@@ -145,10 +145,12 @@ body {
   justify-content: center;
 }
 
+i,
 .date,
 .clock,
 .phrase,
-.todo-item {
+.todo-item,
+.remaining {
   color: transparent;
   background: linear-gradient(135deg, white, lightblue);
   -webkit-background-clip: text;
@@ -181,6 +183,63 @@ body {
   position: fixed;
   display: flex;
   bottom: 0;
+}
+
+.pomodoro-timer {
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
+}
+.pomodoro-timer .label {
+  font-size: 14pt;
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: 0.125s ease-in-out;
+}
+.pomodoro-timer .label:hover {
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.2);
+}
+.pomodoro-timer .timer {
+  line-height: 32pt;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: auto;
+  transition: 0.5s ease-in-out;
+}
+.pomodoro-timer .timer .remaining {
+  padding: 24px 48px;
+  font-size: 32pt;
+}
+.pomodoro-timer .timer .controls {
+  width: 100%;
+  display: flex;
+  padding: 6px;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+.pomodoro-timer .timer .controls button {
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 6px 9px;
+  font-size: 14pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.pomodoro-timer .timer .controls button:hover {
+  box-shadow: 0px 0px 3px lightblue;
+}
+.pomodoro-timer .timer .controls button i {
+  pointer-events: none;
 }
 
 @media (max-height: 84pt) {

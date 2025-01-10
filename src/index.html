@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <script src="app.js" type="module" defer></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Mood Clock</title>
 </head>
@@ -26,13 +27,14 @@
     <p class="clock"></p>
     <p class="phrase"></p>
   </div>
+
   <div class="pomodoro-timer">
-    <p>Pomodoro Timer</p>
+    <div class="label">Pomodoro Timer</div>
     <div class="timer">
       <div class="remaining">24:59</div>
       <div class="controls">
-        <button>Start</button>
-        <button>Reset</button>
+        <button><i class="ph ph-play"></i></button>
+        <button><i class="ph ph-clock-clockwise"></i></button>
       </div>
     </div>
   </div>
