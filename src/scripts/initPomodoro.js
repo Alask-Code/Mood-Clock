@@ -3,8 +3,8 @@ export default function initPomodoro (element) {
   const restartButton = element.querySelector('.controls .reset');
   const timer = element.querySelector('.remaining');
 
-  const initialTime = [0, 10];
-  let timingOperator = initialTime;
+  const initialTime = [25, 0];
+  let timingOperator = [...initialTime];
   let isPomodoroRunning = false;
   let intervalFunction = null;
 
@@ -16,28 +16,42 @@ export default function initPomodoro (element) {
     timer.textContent = formatTime(timingOperator);
   }
 
+  function resetTimerState () {
+    clearInterval(intervalFunction);
+    intervalFunction = null;
+    isPomodoroRunning = false;
+    timingOperator = [...initialTime];
+    updateTimerDisplay();
+    startPauseButton.querySelector('.ph.ph-play').classList.remove('hidden');
+    startPauseButton.querySelector('.ph.ph-pause').classList.add('hidden');
+  }
+
   function timerFunction () {
     if (timingOperator[1] === 0) {
       if (timingOperator[0] === 0) {
-        clearInterval(intervalFunction);
-        intervalFunction = null;
-        isPomodoroRunning = false;
-
         alert('O tempo acabou!');
+        resetTimerState();
         return;
       } else {
         timingOperator[0]--;
         timingOperator[1] = 59;
       }
     } else {
+      if (timingOperator[0] === 0 && timingOperator[1] === 1) {
+        const audio = new Audio();
+        audio.src = 'assets/audio/timer-end.mp3';
+        audio.play();
+      }
       timingOperator[1]--;
     }
     updateTimerDisplay();
   }
 
   function handleStartPlayPause () {
-    startPauseButton.querySelector('.start .ph.ph-play').classList.toggle('hidden');
-    startPauseButton.querySelector('.start .ph.ph-pause').classList.toggle('hidden');
+    const playIcon = startPauseButton.querySelector('.ph.ph-play');
+    const pauseIcon = startPauseButton.querySelector('.ph.ph-pause');
+    playIcon.classList.toggle('hidden');
+    pauseIcon.classList.toggle('hidden');
 
     if (!isPomodoroRunning) {
       isPomodoroRunning = true;
@@ -50,32 +64,11 @@ export default function initPomodoro (element) {
   }
 
   function resetTimer () {
-    clearInterval(intervalFunction);
-    intervalFunction = null;
-    isPomodoroRunning = false;
-    timingOperator = initialTime;
-    updateTimerDisplay();
-    startPauseButton.querySelector('.start .ph.ph-play').classList.remove('hidden');
-    startPauseButton.querySelector('.start .ph.ph-pause').classList.add('hidden');
+    resetTimerState();
   }
 
-  startPauseButton.onclick = () => {
-    handleStartPlayPause();
-  };
-
-  restartButton.onclick = () => {
-    resetTimer();
-  };
-
-  const closePomodoroTimer = element.querySelector('.label');
-  closePomodoroTimer.onclick = () => {
-    element.querySelector('.timer').classList.toggle('hidden');
-    if (isPomodoroRunning) {
-      isPomodoroRunning = false;
-      clearInterval(intervalFunction);
-      intervalFunction = null;
-    }
-  };
+  startPauseButton.onclick = () => handleStartPlayPause();
+  restartButton.onclick = () => resetTimer();
 
   updateTimerDisplay();
 }

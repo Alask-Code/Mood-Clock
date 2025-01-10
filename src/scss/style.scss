@@ -20,10 +20,13 @@ body {
     cursor: pointer;
     padding: 6px 12px;
     transition: 0.125s ease-in-out;
-
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     &:hover {
       border-radius: 6px;
-      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.2);
     }
   }
 
@@ -109,7 +112,7 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-i,
+.label,
 .date,
 .clock,
 .phrase,
@@ -152,10 +155,13 @@ i,
     cursor: pointer;
     padding: 6px 12px;
     transition: 0.125s ease-in-out;
-
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     &:hover {
       border-radius: 6px;
-      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.2);
     }
   }
   flex-direction: column;

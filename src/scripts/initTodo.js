@@ -48,7 +48,6 @@ export default function initTodo (element) {
 
   function updateState () {
     const toDoElements = toDoList.querySelectorAll('.todo-item');
-    console.log('foi chamado');
     toDoElements.forEach(toDoElement => toDoElement.remove());
 
     toDos.forEach(toDo => {
