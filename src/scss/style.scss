@@ -34,7 +34,7 @@ body {
     border-radius: 12px;
     border: 2px solid rgba(255, 255, 255, 0.2);
     overflow: auto;
-    transition: 0.5s ease-in-out;
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     .add {
       padding: 12px;
       top: 0;
@@ -162,17 +162,22 @@ i,
   .timer {
     line-height: 32pt;
     border-radius: 12px;
+    height: 160px;
     border: 2px solid rgba(255, 255, 255, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     overflow: auto;
-    transition: 0.5s ease-in-out;
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
     .remaining {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 24px 48px;
       font-size: 32pt;
+      height: 100%;
     }
     .controls {
       width: 100%;
@@ -197,8 +202,15 @@ i,
         }
         i {
           pointer-events: none;
+          &.hidden {
+            display: none;
+          }
         }
       }
+    }
+    &.hidden {
+      opacity: 0;
+      height: 0px;
     }
   }
 }

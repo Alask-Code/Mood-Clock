@@ -64,7 +64,7 @@ body {
   border-radius: 12px;
   border: 2px solid rgba(255, 255, 255, 0.2);
   overflow: auto;
-  transition: 0.5s ease-in-out;
+  transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .todo .todo-list .add {
   padding: 12px;
@@ -203,17 +203,22 @@ i,
 .pomodoro-timer .timer {
   line-height: 32pt;
   border-radius: 12px;
+  height: 160px;
   border: 2px solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   overflow: auto;
-  transition: 0.5s ease-in-out;
+  transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .pomodoro-timer .timer .remaining {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 24px 48px;
   font-size: 32pt;
+  height: 100%;
 }
 .pomodoro-timer .timer .controls {
   width: 100%;
@@ -240,6 +245,13 @@ i,
 }
 .pomodoro-timer .timer .controls button i {
   pointer-events: none;
+}
+.pomodoro-timer .timer .controls button i.hidden {
+  display: none;
+}
+.pomodoro-timer .timer.hidden {
+  opacity: 0;
+  height: 0px;
 }
 
 @media (max-height: 84pt) {
