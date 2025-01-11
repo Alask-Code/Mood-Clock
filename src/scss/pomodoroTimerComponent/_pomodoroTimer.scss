@@ -1,7 +1,7 @@
 @import "../modules/mixins";
 @import "../modules/variables";
 .pomodoro-timer {
-  @include flex(6px, row, start, start);
+  @include flex(6px, column, start, start);
 
   .label {
     @include flex(6px, row, center, start);
