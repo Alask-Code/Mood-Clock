@@ -280,7 +280,7 @@ body {
     justify-self: flex-end;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 810px) {
   body {
     display: flex;
     position: relative;
