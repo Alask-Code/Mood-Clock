@@ -11,7 +11,8 @@
     margin: 12px;
     top: 62px;
     position: absolute;
-    backdrop-filter: blur(12px);
+    .todo-list {
+    }
   }
   .center {
     position: absolute;
@@ -25,6 +26,9 @@
     margin: 12px;
     bottom: 62px;
     position: absolute;
+    flex-direction: column-reverse;
+    .timer {
+    }
   }
   .information {
     display: none;

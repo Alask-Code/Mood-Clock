@@ -33,10 +33,7 @@ function App () {
   initPomodoro(domPomodoro);
 
   if (!window.process) {
-    document.body.style.background = "url('https://picsum.photos/id/17/1920/1080')";
-    document.body.style.backgroundSize = 'cover';
-    document.body.style.backgroundPosition = 'center';
-    document.body.style.backdropFilter = 'blur(12px) contrast(180%) brightness(20%)';
+    document.body.classList.toggle('web');
   };
 }
 App();

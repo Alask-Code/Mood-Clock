@@ -14,11 +14,7 @@ export default function initTodo (element) {
       localStorage.removeItem('notes');
     } else {
       const pendingToDos = toDos.filter(task => !task.did);
-      if (pendingToDos.length === 0) {
-        localStorage.removeItem('notes');
-      } else {
-        localStorage.setItem('notes', JSON.stringify(pendingToDos));
-      }
+      pendingToDos.length === 0 ? localStorage.removeItem('notes') : localStorage.setItem('notes', JSON.stringify(pendingToDos));
     }
     updateState();
   }
@@ -34,8 +30,6 @@ export default function initTodo (element) {
 
   function updateToDo (toDoId) {
     try {
-      console.log(toDoId);
-
       const toDo = toDos.find(toDo => toDo.id === toDoId);
       if (toDo) {
         toDo.did = !toDo.did;
@@ -76,7 +70,8 @@ export default function initTodo (element) {
   };
   const closeToDoPage = element.querySelector('.label');
   closeToDoPage.onclick = () => {
-    toDoList.classList.toggle('hidden');
+    document.querySelector('.todo-list-wrapper')
+      .classList.toggle('hidden');
   };
   updateState();
 }

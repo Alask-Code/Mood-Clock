@@ -5,3 +5,4 @@
 - [ ] Feature: Pomodoro Timer
 - [ ] Feature: Change category of phrases
 - [ ] Localization
+- [ ] Proper `README.md`
