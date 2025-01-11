@@ -1,0 +1,105 @@
+.todo {
+  gap: 9px;
+  display: flex;
+
+  flex-direction: column;
+  .label {
+    font-size: 14pt;
+    cursor: pointer;
+    padding: 6px 12px;
+    transition: 0.125s ease-in-out;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    &:hover {
+      border-radius: 6px;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .todo-list {
+    width: 320px;
+    height: 500px;
+    overflow: auto;
+    line-height: 32pt;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    .add {
+      padding: 12px;
+      top: 0;
+      width: 100%;
+      display: flex;
+      z-index: 5;
+      position: sticky;
+      margin-bottom: 6px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      .wrapper {
+        display: flex;
+        border-radius: 12px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+
+        input {
+          width: 100%;
+          padding: 6px 12px;
+          font-size: 14pt;
+          background: transparent;
+          &::placeholder {
+            color: white;
+          }
+        }
+        button {
+          cursor: pointer;
+          font-size: 24pt;
+          padding: 0px 12px;
+          font-weight: 100;
+          background: transparent;
+        }
+      }
+    }
+    .todo-item {
+      display: flex;
+      padding: 0px 12px;
+      font-size: 14pt;
+      gap: 6px;
+      align-items: start;
+      p {
+        &.did {
+          text-decoration: line-through;
+          opacity: 0.5;
+        }
+      }
+      input[type="checkbox"] {
+        appearance: none;
+        min-width: 24px;
+        min-height: 24px;
+        width: 24px;
+        height: 24px;
+        max-width: 24px;
+        max-height: 24px;
+        border-radius: 9px;
+        margin: 9px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        &:checked {
+          &::after {
+            content: "✔️";
+            color: white;
+          }
+          border: 2px solid rgba(0, 0, 0, 0.2);
+          background: rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+    &.hidden {
+      opacity: 0;
+      height: 0px;
+    }
+  }
+}

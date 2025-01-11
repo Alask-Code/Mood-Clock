@@ -5,10 +5,12 @@
   padding: 0;
   border: none;
   outline: none;
+  color: white;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
   box-sizing: border-box;
+  font-family: "JetBrains Mono";
 }
 
 html,
@@ -31,23 +33,6 @@ body {
     transform: translateY(0px);
   }
 }
-* {
-  color: white;
-  font-family: "JetBrains Mono";
-}
-
-body {
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-body.web {
-  background: url("../assets/images/background.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
 .todo {
   gap: 9px;
   display: flex;
@@ -154,53 +139,6 @@ body.web {
   height: 0px;
 }
 
-.center {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.label,
-.date,
-.clock,
-.phrase,
-.todo-item,
-.remaining {
-  color: transparent;
-  background: linear-gradient(135deg, white, lightblue);
-  -webkit-background-clip: text;
-          background-clip: text;
-  filter: drop-shadow(0px 0px 6px lightblue);
-}
-
-.date {
-  text-transform: capitalize;
-}
-
-.clock {
-  font-size: 48pt;
-}
-
-.phrase {
-  cursor: pointer;
-}
-.phrase.animate {
-  animation-fill-mode: forwards;
-  animation: swithPhrase 0.5s ease-in-out alternate;
-}
-
-.information {
-  gap: 24px;
-  opacity: 0.5;
-  padding: 12px 24px;
-  width: 100%;
-  justify-content: end;
-  position: fixed;
-  display: flex;
-  bottom: 0;
-}
-
 .pomodoro-timer {
   gap: 6px;
   display: flex;
@@ -274,6 +212,61 @@ body.web {
 .pomodoro-timer .timer.hidden {
   opacity: 0;
   height: 0px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.center .date {
+  text-transform: capitalize;
+}
+.center .clock {
+  font-size: 48pt;
+}
+.center .phrase {
+  cursor: pointer;
+}
+.center .phrase.animate {
+  animation-fill-mode: forwards;
+  animation: swithPhrase 0.5s ease-in-out alternate;
+}
+.center .information {
+  gap: 24px;
+  opacity: 0.5;
+  padding: 12px 24px;
+  width: 100%;
+  justify-content: end;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+}
+
+body {
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+body.web {
+  background: url("../assets/images/background.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.label,
+.date,
+.clock,
+.phrase,
+.todo-item,
+.remaining {
+  color: transparent;
+  background: linear-gradient(135deg, white, lightblue);
+  -webkit-background-clip: text;
+          background-clip: text;
+  filter: drop-shadow(0px 0px 6px lightblue);
 }
 
 @media (max-height: 84pt) {

@@ -1,0 +1,12 @@
+@mixin flex($gap, $direction, $align, $justify) {
+  gap: $gap;
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+@mixin textGradient($color1, $color2) {
+  color: transparent;
+  background: linear-gradient(135deg, $color1, $color2);
+  background-clip: text;
+}
