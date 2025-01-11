@@ -280,3 +280,36 @@ body {
     justify-self: flex-end;
   }
 }
+@media (max-width: 360px) {
+  body {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .todo {
+    z-index: 2;
+    margin: 12px;
+    top: 62px;
+    position: absolute;
+    -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+  }
+  .center {
+    position: absolute;
+    inset: 0;
+    font-size: 8pt;
+  }
+  .center .clock {
+    font-size: 36pt;
+  }
+  .pomodoro-timer {
+    margin: 12px;
+    bottom: 62px;
+    position: absolute;
+  }
+  .information {
+    display: none;
+  }
+}
