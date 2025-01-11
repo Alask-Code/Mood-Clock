@@ -39,7 +39,13 @@ body {
 body {
   display: grid;
   place-items: center;
+  overflow: hidden;
   grid-template-columns: 1fr 1fr 1fr;
+}
+body.web {
+  background: url("../assets/images/background.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .todo {
@@ -68,6 +74,7 @@ body {
   line-height: 32pt;
   border-radius: 12px;
   border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.6);
   -webkit-backdrop-filter: blur(12px);
           backdrop-filter: blur(12px);
   transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -80,32 +87,29 @@ body {
   z-index: 5;
   position: sticky;
   margin-bottom: 6px;
-  -webkit-backdrop-filter: brightness(1000%);
-          backdrop-filter: brightness(1000%);
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
-.todo .todo-list .add input {
+.todo .todo-list .add .wrapper {
+  display: flex;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.todo .todo-list .add .wrapper input {
   width: 100%;
   padding: 6px 12px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
   font-size: 14pt;
-  border-right: none;
-  border-radius: 12px 0px 0px 12px;
   background: transparent;
 }
-.todo .todo-list .add input::-moz-placeholder {
+.todo .todo-list .add .wrapper input::-moz-placeholder {
   color: white;
 }
-.todo .todo-list .add input::placeholder {
+.todo .todo-list .add .wrapper input::placeholder {
   color: white;
 }
-.todo .todo-list .add button {
+.todo .todo-list .add .wrapper button {
   cursor: pointer;
   font-size: 24pt;
   padding: 0px 12px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-left: none;
-  border-radius: 0px 12px 12px 0px;
   font-weight: 100;
   background: transparent;
 }
@@ -217,6 +221,8 @@ body {
   border-color: rgba(255, 255, 255, 0.2);
 }
 .pomodoro-timer .timer {
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
   line-height: 32pt;
   border-radius: 12px;
   height: 160px;
@@ -314,6 +320,7 @@ body {
     margin: 12px;
     bottom: 62px;
     position: absolute;
+    flex-direction: column-reverse;
   }
   .information {
     display: none;

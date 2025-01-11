@@ -34,8 +34,6 @@ export default function initTodo (element) {
 
   function updateToDo (toDoId) {
     try {
-      console.log(toDoId);
-
       const toDo = toDos.find(toDo => toDo.id === toDoId);
       if (toDo) {
         toDo.did = !toDo.did;

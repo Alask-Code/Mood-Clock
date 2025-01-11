@@ -72,7 +72,6 @@ export default function initPomodoro (element) {
   restartButton.onclick = () => resetTimer();
   closePomodoro.onclick = () => {
     element.querySelector('.timer').classList.toggle('hidden');
-    console.log('aa');
   };
 
   updateTimerDisplay();
