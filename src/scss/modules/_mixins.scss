@@ -10,3 +10,13 @@
   background: linear-gradient(135deg, $color1, $color2);
   background-clip: text;
 }
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin staticSize($width, $height) {
+  min-width: $width;
+  min-height: $height;
+  max-width: $width;
+  max-height: $height;
+}

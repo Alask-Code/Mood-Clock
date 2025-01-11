@@ -27,6 +27,15 @@ body {
   @include textGradient(white, lightblue);
   filter: drop-shadow(0px 0px 6px lightblue);
 }
-
+.information {
+  gap: 24px;
+  opacity: 0.125;
+  padding: 12px 24px;
+  width: 100%;
+  justify-content: end;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+}
 @import "compact";
 @import "mobile";
