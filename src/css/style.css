@@ -43,7 +43,7 @@ body {
 }
 
 .todo {
-  gap: 6px;
+  gap: 9px;
   display: flex;
   flex-direction: column;
 }
@@ -64,10 +64,12 @@ body {
 .todo .todo-list {
   width: 320px;
   height: 500px;
+  overflow: auto;
   line-height: 32pt;
   border-radius: 12px;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  overflow: auto;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
   transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .todo .todo-list .add {
@@ -75,10 +77,11 @@ body {
   top: 0;
   width: 100%;
   display: flex;
+  z-index: 5;
   position: sticky;
   margin-bottom: 6px;
-  -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: brightness(1000%);
+          backdrop-filter: brightness(1000%);
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 .todo .todo-list .add input {
@@ -110,8 +113,8 @@ body {
   display: flex;
   padding: 0px 12px;
   font-size: 14pt;
-  gap: 9px;
-  align-items: center;
+  gap: 6px;
+  align-items: start;
 }
 .todo .todo-list .todo-item p.did {
   text-decoration: line-through;
@@ -121,9 +124,14 @@ body {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  min-width: 24px;
+  min-height: 24px;
   width: 24px;
   height: 24px;
+  max-width: 24px;
+  max-height: 24px;
   border-radius: 9px;
+  margin: 9px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -293,8 +301,6 @@ body {
     margin: 12px;
     top: 62px;
     position: absolute;
-    -webkit-backdrop-filter: blur(12px);
-            backdrop-filter: blur(12px);
   }
   .center {
     position: absolute;
