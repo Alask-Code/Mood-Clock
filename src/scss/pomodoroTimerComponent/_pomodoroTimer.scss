@@ -1,7 +1,7 @@
 @import "../modules/mixins";
 @import "../modules/variables";
 .pomodoro-timer {
-  @include flex(6px, column, start, start);
+  @include flex(6px, columndis, start, start);
 
   .label {
     @include flex(6px, row, center, start);
@@ -23,7 +23,7 @@
     line-height: 32pt;
     border-radius: $br-g;
     backdrop-filter: blur(12px);
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.2);
     transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     &.hidden {
@@ -40,7 +40,7 @@
       @include flex(12px, row, center, center);
       width: 100%;
       padding: 6px;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.4);
       border-top: 2px solid rgba(255, 255, 255, 0.2);
       button {
         @include flex(0, row, center, center);
@@ -51,7 +51,8 @@
         background: transparent;
         border: 2px solid rgba(255, 255, 255, 0.2);
         &:hover {
-          opacity: 0.5;
+          border: 2px solid rgba(255, 255, 255, 0.1);
+          // opacity: 0.5;
         }
         i {
           pointer-events: none;
