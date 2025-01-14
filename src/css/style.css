@@ -159,7 +159,7 @@ body {
   display: flex;
   align-items: start;
   justify-content: start;
-  flex-direction: columndis;
+  flex-direction: column;
 }
 .pomodoro-timer .label {
   gap: 6px;
@@ -296,20 +296,26 @@ body.web {
 
 @media (max-height: 84pt) {
   body {
-    padding: 12px;
+    padding: 0px 12px;
     font-size: 9pt;
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-items: center;
-    grid-template-columns: 2fr 2fr 2fr;
   }
-  .date {
-    justify-self: flex-start;
+  .center {
+    font-size: 8pt;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
   }
-  .clock {
-    font-size: 12pt;
+  .center .clock {
+    font-size: 10pt;
   }
-  .phrase {
-    justify-self: flex-end;
+  .todo,
+  .pomodoro-timer,
+  .information {
+    display: none;
   }
 }
 @media (max-width: 810px) {
