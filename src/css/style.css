@@ -105,6 +105,11 @@ body {
   background: transparent;
 }
 .todo .todo-list-wrapper .todo-list {
+  gap: 0;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column-reverse;
   width: 100%;
   height: 100%;
   overflow: auto;
