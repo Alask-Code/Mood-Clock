@@ -68,6 +68,24 @@ export default function initTodo (element) {
       newToDoInput.focus();
     }
   };
+  function EnterHandler ({ key }) {
+    if (key === 'Enter') {
+      const taskContent = newToDoInput.value.trim();
+      if (taskContent) {
+        addToDo(taskContent);
+        newToDoInput.value = '';
+        newToDoInput.focus();
+      }
+    }
+  }
+  newToDoInput.onfocus = () => {
+    window.addEventListener('keypress', EnterHandler);
+
+    newToDoInput.onblur = () => {
+      window.removeEventListener('keypress', EnterHandler);
+      ;
+    };
+  };
   const closeToDoPage = element.querySelector('.label');
   closeToDoPage.onclick = () => {
     document.querySelector('.todo-list-wrapper')
