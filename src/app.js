@@ -4,8 +4,12 @@ import initDate from './scripts/initDate.js';
 import randomPhrase from './scripts/randomPhrase.js';
 import initTodo from './scripts/initTodo.js';
 import initPomodoro from './scripts/initPomodoro.js';
+import initCriptoTracker from './scripts/initCriptoTracker.js';
 
-function App () {
+async function App () {
+  const domCriptoTracker = document.querySelector('.cripto-tracker');
+  initCriptoTracker(domCriptoTracker);
+
   const domTodo = document.querySelector('.todo');
   initTodo(domTodo);
 
