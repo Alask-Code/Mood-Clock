@@ -1,8 +1,0 @@
-- [x] Change: Notes to ToDo
-- [x] Change: Todo List UI
-- [x] Feature: `Enter` keystroke
-- [x] Feature: Click `Todo's` to hide Todo List
-- [x] Feature: Pomodoro Timer
-- [ ] Feature: Change category of phrases
-- [ ] Localization
-- [x] Proper `README.md`
