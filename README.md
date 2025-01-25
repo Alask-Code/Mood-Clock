@@ -1,5 +1,9 @@
 O **Mood Clock** é uma aplicação web que combina funcionalidades de lista de tarefas (*to-do list*), temporizador Pomodoro e um relógio, auxiliando na gestão de tempo e produtividade.
 
+## Futura Atualização
+- **Criptomoedas**: Um Corretor de Criptomoedas na tela, mostrando preço atual
+- **Data**: 26/01/2025
+
 ## Funcionalidades
 
 - **Lista de Tarefas**: Permite adicionar, editar e remover tarefas, ajudando no acompanhamento das atividades pendentes.
@@ -33,7 +37,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para fazer um *fork* do rep
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT.
-
----
-
-Para mais informações e acesso ao código-fonte, visite o repositório no GitHub: [https://github.com/alask-code/Mood-Clock](https://github.com/alask-code/Mood-Clock) 
