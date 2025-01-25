@@ -13,18 +13,17 @@
     border: 2px solid transparent;
     border-radius: $br-g;
     &:hover {
-      border-color: rgba(255, 255, 255, 0.2);
+      background: $background-color;
+      border-color: $border-color;
     }
   }
   .timer {
     @include flex(0, column, center, space-between);
+    @include cardComponent($br-g, $background-color, $border-color);
     height: 160px;
     overflow: hidden;
     line-height: 32pt;
-    border-radius: $br-g;
     backdrop-filter: blur(12px);
-    background: rgba(0, 0, 0, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.2);
     transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     &.hidden {
       opacity: 0;
@@ -40,19 +39,16 @@
       @include flex(12px, row, center, center);
       width: 100%;
       padding: 6px;
-      background: rgba(0, 0, 0, 0.4);
-      border-top: 2px solid rgba(255, 255, 255, 0.2);
+      background: $accent-color;
+      border-top: 2px solid $border-color;
       button {
         @include flex(0, row, center, center);
+        @include cardComponent($br-m, $background-color, $border-color);
         cursor: pointer;
         font-size: 14pt;
         padding: 6px 9px;
-        border-radius: $br-m;
-        background: transparent;
-        border: 2px solid rgba(255, 255, 255, 0.2);
         &:hover {
-          border: 2px solid rgba(255, 255, 255, 0.1);
-          // opacity: 0.5;
+          opacity: 0.75;
         }
         i {
           pointer-events: none;

@@ -1,4 +1,5 @@
 @import "../modules/mixins";
+@import "../modules/variables";
 
 .todo {
   @include flex(9px, column, start, center);
@@ -10,19 +11,17 @@
     padding: 6px 12px;
     border-radius: 12px;
     border: 2px solid transparent;
-    transition: 0.125s ease-in-out;
+    transition: 0.125s $cubicBezier;
     &:hover {
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: $border-color;
+      background: $background-color;
     }
   }
   .todo-list-wrapper {
     @include size(320px, 500px);
-    border-radius: 12px;
+    @include cardComponent($br-g, $background-color, $border-color);
     overflow: hidden;
-    backdrop-filter: blur(12px);
-    background: rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: 0.5s $cubicBezier;
     &.hidden {
       opacity: 0;
       height: 0px;
@@ -32,12 +31,12 @@
       z-index: 5;
       width: 100%;
       padding: 12px;
-      background: rgba(0, 0, 0, 0.2);
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      background: $accent-color;
+      border-bottom: 2px solid $border-color;
       .wrapper {
         display: flex;
         border-radius: 12px;
-        border: 2px solid rgba(255, 255, 255, 0.2);
+        border: 2px solid $border-color;
         input {
           width: 100%;
           font-size: 14pt;
@@ -73,13 +72,12 @@
           appearance: none;
           margin: 9px 0px;
           border-radius: 9px;
-          border: 2px solid rgba(255, 255, 255, 0.2);
+          border: 2px solid $border-color;
           &:checked {
             &::after {
               content: "✔️";
             }
             opacity: 0.5;
-            background: rgba(255, 255, 255, 0.2);
           }
         }
       }

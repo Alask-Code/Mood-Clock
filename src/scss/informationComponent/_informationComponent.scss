@@ -1,0 +1,15 @@
+@import "../modules/variables";
+
+.information {
+  gap: 24px;
+  width: 100%;
+  // opacity: 0.5;
+  padding: 12px 24px;
+  justify-content: end;
+  backdrop-filter: blur(12px);
+  border-top: 2px solid $border-color;
+  background: $background-color;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+}

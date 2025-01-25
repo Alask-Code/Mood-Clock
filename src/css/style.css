@@ -25,6 +25,10 @@ body {
   height: 100%;
 }
 
+.disabled {
+  display: none !important;
+}
+
 @keyframes swithPhrase {
   0% {
     opacity: 1;
@@ -39,14 +43,54 @@ body {
     transform: translateY(0px);
   }
 }
-.todo {
+body {
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: rgb(3, 17, 17);
+}
+body .cripto-tracker {
+  gap: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  top: 0;
+  right: 0;
+  margin: 24px;
+  position: fixed;
+  padding: 24px;
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+body .cripto-tracker .img {
+  gap: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  min-width: 72px;
+  min-height: 72px;
+  max-width: 72px;
+  max-height: 72px;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.2);
+}
+body .cripto-tracker .info .title {
+  font-size: 24pt;
+}
+body .todo {
   gap: 9px;
   display: flex;
   align-items: start;
   justify-content: center;
   flex-direction: column;
 }
-.todo .label {
+body .todo .label {
   gap: 6px;
   display: flex;
   align-items: center;
@@ -58,53 +102,54 @@ body {
   padding: 6px 12px;
   border-radius: 12px;
   border: 2px solid transparent;
-  transition: 0.125s ease-in-out;
+  transition: 0.125s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.todo .label:hover {
+body .todo .label:hover {
   border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.4);
 }
-.todo .todo-list-wrapper {
+body .todo .todo-list-wrapper {
   width: 320px;
   height: 500px;
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 12px;
-  overflow: hidden;
   -webkit-backdrop-filter: blur(12px);
           backdrop-filter: blur(12px);
-  background: rgba(0, 0, 0, 0.4);
   border: 2px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
   transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.todo .todo-list-wrapper.hidden {
+body .todo .todo-list-wrapper.hidden {
   opacity: 0;
   height: 0px;
 }
-.todo .todo-list-wrapper .add {
+body .todo .todo-list-wrapper .add {
   top: 0;
   z-index: 5;
   width: 100%;
   padding: 12px;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
-.todo .todo-list-wrapper .add .wrapper {
+body .todo .todo-list-wrapper .add .wrapper {
   display: flex;
   border-radius: 12px;
   border: 2px solid rgba(255, 255, 255, 0.2);
 }
-.todo .todo-list-wrapper .add .wrapper input {
+body .todo .todo-list-wrapper .add .wrapper input {
   width: 100%;
   font-size: 14pt;
   padding: 6px 12px;
   background: transparent;
 }
-.todo .todo-list-wrapper .add .wrapper button {
+body .todo .todo-list-wrapper .add .wrapper button {
   cursor: pointer;
   font-size: 24pt;
   padding: 0px 12px;
   font-weight: 100;
   background: transparent;
 }
-.todo .todo-list-wrapper .todo-list {
+body .todo .todo-list-wrapper .todo-list {
   gap: 0;
   display: flex;
   align-items: start;
@@ -116,7 +161,7 @@ body {
   line-height: 32pt;
   padding-bottom: 160px;
 }
-.todo .todo-list-wrapper .todo-list .todo-item {
+body .todo .todo-list-wrapper .todo-list .todo-item {
   gap: 6px;
   display: flex;
   align-items: start;
@@ -125,11 +170,11 @@ body {
   font-size: 14pt;
   padding: 0px 12px;
 }
-.todo .todo-list-wrapper .todo-list .todo-item p.did {
+body .todo .todo-list-wrapper .todo-list .todo-item p.did {
   opacity: 0.5;
   text-decoration: line-through;
 }
-.todo .todo-list-wrapper .todo-list .todo-item input[type=checkbox] {
+body .todo .todo-list-wrapper .todo-list .todo-item input[type=checkbox] {
   gap: 0;
   display: flex;
   align-items: center;
@@ -146,22 +191,20 @@ body {
   border-radius: 9px;
   border: 2px solid rgba(255, 255, 255, 0.2);
 }
-.todo .todo-list-wrapper .todo-list .todo-item input[type=checkbox]:checked {
+body .todo .todo-list-wrapper .todo-list .todo-item input[type=checkbox]:checked {
   opacity: 0.5;
-  background: rgba(255, 255, 255, 0.2);
 }
-.todo .todo-list-wrapper .todo-list .todo-item input[type=checkbox]:checked::after {
+body .todo .todo-list-wrapper .todo-list .todo-item input[type=checkbox]:checked::after {
   content: "✔️";
 }
-
-.pomodoro-timer {
+body .pomodoro-timer {
   gap: 6px;
   display: flex;
   align-items: start;
   justify-content: start;
   flex-direction: column;
 }
-.pomodoro-timer .label {
+body .pomodoro-timer .label {
   gap: 6px;
   display: flex;
   align-items: center;
@@ -175,30 +218,32 @@ body {
   border: 2px solid transparent;
   border-radius: 12px;
 }
-.pomodoro-timer .label:hover {
+body .pomodoro-timer .label:hover {
+  background: rgba(0, 0, 0, 0.4);
   border-color: rgba(255, 255, 255, 0.2);
 }
-.pomodoro-timer .timer {
+body .pomodoro-timer .timer {
   gap: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  height: 160px;
-  overflow: hidden;
-  line-height: 32pt;
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 12px;
   -webkit-backdrop-filter: blur(12px);
           backdrop-filter: blur(12px);
-  background: rgba(0, 0, 0, 0.2);
   border: 2px solid rgba(255, 255, 255, 0.2);
+  height: 160px;
+  overflow: hidden;
+  line-height: 32pt;
+  backdrop-filter: blur(12px);
   transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.pomodoro-timer .timer.hidden {
+body .pomodoro-timer .timer.hidden {
   opacity: 0;
   height: 0px;
 }
-.pomodoro-timer .timer .remaining {
+body .pomodoro-timer .timer .remaining {
   gap: 0;
   display: flex;
   align-items: center;
@@ -208,7 +253,7 @@ body {
   font-size: 32pt;
   padding: 24px 48px;
 }
-.pomodoro-timer .timer .controls {
+body .pomodoro-timer .timer .controls {
   gap: 12px;
   display: flex;
   align-items: center;
@@ -219,76 +264,58 @@ body {
   background: rgba(0, 0, 0, 0.4);
   border-top: 2px solid rgba(255, 255, 255, 0.2);
 }
-.pomodoro-timer .timer .controls button {
+body .pomodoro-timer .timer .controls button {
   gap: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
   font-size: 14pt;
   padding: 6px 9px;
-  border-radius: 6px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
 }
-.pomodoro-timer .timer .controls button:hover {
-  border: 2px solid rgba(255, 255, 255, 0.1);
+body .pomodoro-timer .timer .controls button:hover {
+  opacity: 0.75;
 }
-.pomodoro-timer .timer .controls button i {
+body .pomodoro-timer .timer .controls button i {
   pointer-events: none;
 }
-.pomodoro-timer .timer .controls button i.hidden {
+body .pomodoro-timer .timer .controls button i.hidden {
   display: none;
 }
-
-.center {
+body .center {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 }
-.center .date {
+body .center .date {
   text-transform: capitalize;
 }
-.center .clock {
+body .center .clock {
   font-size: 48pt;
 }
-.center .phrase {
+body .center .phrase {
   cursor: pointer;
 }
-.center .phrase.animate {
+body .center .phrase.animate {
   animation-fill-mode: forwards;
   animation: swithPhrase 0.5s ease-in-out alternate;
 }
-
-body {
-  display: grid;
-  overflow: hidden;
-  place-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-body.web {
-  background: url("../assets/images/background.webp");
-  background-position: center;
-  background-size: cover;
-}
-
-.label,
-.date,
-.clock,
-.phrase,
-.todo-item,
-.remaining {
-  color: white;
-}
-
-.information {
+body .information {
   gap: 24px;
-  opacity: 0.125;
-  padding: 12px 24px;
   width: 100%;
+  padding: 12px 24px;
   justify-content: end;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.4);
   position: fixed;
   display: flex;
   bottom: 0;

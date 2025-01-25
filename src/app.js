@@ -31,9 +31,5 @@ function App () {
 
   const domPomodoro = document.querySelector('.pomodoro-timer');
   initPomodoro(domPomodoro);
-
-  if (!window.process) {
-    document.body.classList.toggle('web');
-  };
 }
 App();

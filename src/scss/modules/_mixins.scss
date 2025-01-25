@@ -1,14 +1,11 @@
+@import "variables";
+
 @mixin flex($gap, $direction, $align, $justify) {
   gap: $gap;
   display: flex;
   align-items: $align;
   justify-content: $justify;
   flex-direction: $direction;
-}
-@mixin textGradient($color1, $color2) {
-  color: transparent;
-  background: linear-gradient(135deg, $color1, $color2);
-  background-clip: text;
 }
 @mixin size($width, $height) {
   width: $width;
@@ -19,4 +16,16 @@
   min-height: $height;
   max-width: $width;
   max-height: $height;
+}
+@mixin squareSize($size) {
+  min-width: $size;
+  min-height: $size;
+  max-width: $size;
+  max-height: $size;
+}
+@mixin cardComponent($bd, $bg-color, $bd-color) {
+  background: $bg-color;
+  border-radius: $bd;
+  backdrop-filter: blur($br-g);
+  border: 2px solid $bd-color;
 }

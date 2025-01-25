@@ -1,42 +1,23 @@
 @import "modules/reset";
 @import "modules/mixins";
 @import "modules/animations";
-@import "todoComponent/todo";
-@import "pomodoroTimerComponent/pomodoroTimer";
-@import "centerComponent/center";
+@import "modules/variables";
 
 body {
   display: grid;
   overflow: hidden;
   place-items: center;
   grid-template-columns: 1fr 1fr 1fr;
-
-  &.web {
-    background: url("../assets/images/background.webp");
-    background-position: center;
-    background-size: cover;
-  }
+  background: rgb(3, 17, 17);
+  // background: url("../assets/images/background.webp");
+  // background-position: center;
+  // background-size: cover;
+  @import "criptoTrackerComponent/criptoTrackerComponent";
+  @import "todoComponent/todo";
+  @import "pomodoroTimerComponent/pomodoroTimer";
+  @import "centerComponent/center";
+  @import "informationComponent/informationComponent";
 }
 
-.label,
-.date,
-.clock,
-.phrase,
-.todo-item,
-.remaining {
-  color: white;
-  // @include textGradient(white, lightblue);
-  // filter: drop-shadow(0px 0px 6px lightblue);
-}
-.information {
-  gap: 24px;
-  opacity: 0.125;
-  padding: 12px 24px;
-  width: 100%;
-  justify-content: end;
-  position: fixed;
-  display: flex;
-  bottom: 0;
-}
 @import "compact";
 @import "mobile";
