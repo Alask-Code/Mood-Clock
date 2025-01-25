@@ -287,6 +287,50 @@ body .information {
   display: flex;
   bottom: 0;
 }
+body .cripto-tracker {
+  gap: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 24px;
+  top: 0;
+  right: 0;
+  margin: 24px;
+  position: fixed;
+  z-index: 5;
+}
+body .cripto-tracker .img {
+  gap: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  min-width: 72px;
+  min-height: 72px;
+  max-width: 72px;
+  max-height: 72px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+body .cripto-tracker .info {
+  gap: 6px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+body .cripto-tracker .info .title {
+  font-size: 18pt;
+}
+body .cripto-tracker .info .price {
+  font-size: 14pt;
+}
 
 @media (max-height: 84pt) {
   body {
