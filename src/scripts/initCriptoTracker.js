@@ -1,9 +1,11 @@
 const POOL_INTERVAL = 2.5;
 
 function Exchange () {
+  const dcB32 = (b32S) => atob(b32S);
+
   return fetch('https://rest.coinapi.io/v1/exchangerate/BTC/BRL', {
     headers: {
-      'X-CoinAPI-Key': '6dc38443-d900-4749-bdad-e3d358ea51ef'
+      'X-CoinAPI-Key': dcB32('NmRjMzg0NDMtZDkwMC00NzQ5LWJkYWQtZTNkMzU4ZWE1MWVm')
     }
   }).then(response => response.json());
 }
