@@ -2,6 +2,8 @@
 @import "../modules/variables";
 
 .cripto-tracker {
+  box-shadow: 12px 6px 24px rgba(0, 0, 0, 0.8);
+
   @include flex(24px, row, center, center);
   @include cardComponent($br-g, $background-color, $border-color);
   padding: 24px;
@@ -12,9 +14,11 @@
   z-index: 5;
   .img {
     @include flex(0, row, center, center);
-    @include squareSize(72px);
-    background: $border-color;
+    @include squareSize(60px);
+    background-position: center;
+    background-size: cover;
     border-radius: 50%;
+    outline: 2px solid $border-color;
   }
   .info {
     @include flex(6px, column, start, center);
