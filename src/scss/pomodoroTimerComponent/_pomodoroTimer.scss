@@ -18,6 +18,8 @@
     }
   }
   .timer {
+    box-shadow: 12px 6px 24px rgba(0, 0, 0, 0.8);
+
     @include flex(0, column, center, space-between);
     @include cardComponent($br-g, $background-color, $border-color);
     height: 160px;

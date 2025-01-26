@@ -5,7 +5,7 @@
   padding: 0;
   border: none;
   outline: none;
-  color: white;
+  color: rgb(255, 237, 157);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -13,10 +13,10 @@
   font-family: "JetBrains Mono";
 }
 *::-moz-placeholder {
-  color: white;
+  color: rgb(255, 237, 157);
 }
 *::placeholder {
-  color: white;
+  color: rgb(255, 237, 157);
 }
 
 html,
@@ -48,40 +48,8 @@ body {
   overflow: hidden;
   place-items: center;
   grid-template-columns: 1fr 1fr 1fr;
-  background: rgb(3, 17, 17);
-}
-body .cripto-tracker {
-  gap: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  top: 0;
-  right: 0;
-  margin: 24px;
-  position: fixed;
-  padding: 24px;
-  border-radius: 12px;
-  -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
-  background: rgba(0, 0, 0, 0.4);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-}
-body .cripto-tracker .img {
-  gap: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  min-width: 72px;
-  min-height: 72px;
-  max-width: 72px;
-  max-height: 72px;
-  border-radius: 100%;
-  background: rgba(255, 255, 255, 0.2);
-}
-body .cripto-tracker .info .title {
-  font-size: 24pt;
+  box-shadow: inset 0px 0px 84px 48px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(135deg, rgb(4, 113, 113), rgb(1, 36, 36));
 }
 body .todo {
   gap: 9px;
@@ -105,17 +73,18 @@ body .todo .label {
   transition: 0.125s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 body .todo .label:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 94, 0, 0.4);
 }
 body .todo .todo-list-wrapper {
+  box-shadow: 12px 6px 24px rgba(0, 0, 0, 0.8);
   width: 320px;
   height: 500px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 94, 0, 0.4);
   border-radius: 12px;
   -webkit-backdrop-filter: blur(12px);
           backdrop-filter: blur(12px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   overflow: hidden;
   transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -128,13 +97,13 @@ body .todo .todo-list-wrapper .add {
   z-index: 5;
   width: 100%;
   padding: 12px;
-  background: rgba(0, 0, 0, 0.4);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 187, 0, 0.4);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
 }
 body .todo .todo-list-wrapper .add .wrapper {
   display: flex;
   border-radius: 12px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
 body .todo .todo-list-wrapper .add .wrapper input {
   width: 100%;
@@ -189,7 +158,7 @@ body .todo .todo-list-wrapper .todo-list .todo-item input[type=checkbox] {
           appearance: none;
   margin: 9px 0px;
   border-radius: 9px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
 body .todo .todo-list-wrapper .todo-list .todo-item input[type=checkbox]:checked {
   opacity: 0.5;
@@ -219,20 +188,21 @@ body .pomodoro-timer .label {
   border-radius: 12px;
 }
 body .pomodoro-timer .label:hover {
-  background: rgba(0, 0, 0, 0.4);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 94, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 body .pomodoro-timer .timer {
+  box-shadow: 12px 6px 24px rgba(0, 0, 0, 0.8);
   gap: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 94, 0, 0.4);
   border-radius: 12px;
   -webkit-backdrop-filter: blur(12px);
           backdrop-filter: blur(12px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   height: 160px;
   overflow: hidden;
   line-height: 32pt;
@@ -261,8 +231,8 @@ body .pomodoro-timer .timer .controls {
   flex-direction: row;
   width: 100%;
   padding: 6px;
-  background: rgba(0, 0, 0, 0.4);
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 187, 0, 0.4);
+  border-top: 2px solid rgba(255, 255, 255, 0.4);
 }
 body .pomodoro-timer .timer .controls button {
   gap: 0;
@@ -270,11 +240,11 @@ body .pomodoro-timer .timer .controls button {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 94, 0, 0.4);
   border-radius: 6px;
   -webkit-backdrop-filter: blur(12px);
           backdrop-filter: blur(12px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   cursor: pointer;
   font-size: 14pt;
   padding: 6px 9px;
@@ -293,32 +263,106 @@ body .center {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  text-shadow: 0px 0px 48px rgba(0, 0, 0, 0.8);
 }
-body .center .date {
+body .center::after {
+  z-index: -1;
+  content: "";
+  filter: blur(84px);
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  width: 20%;
+  height: 20%;
+}
+body .date {
   text-transform: capitalize;
 }
-body .center .clock {
+body .clock {
   font-size: 48pt;
 }
-body .center .phrase {
+body .phrase {
   cursor: pointer;
 }
-body .center .phrase.animate {
+body .phrase.animate {
   animation-fill-mode: forwards;
   animation: swithPhrase 0.5s ease-in-out alternate;
 }
 body .information {
+  box-shadow: -12px -6px 24px rgba(0, 0, 0, 0.8);
   gap: 24px;
   width: 100%;
   padding: 12px 24px;
   justify-content: end;
   -webkit-backdrop-filter: blur(12px);
           backdrop-filter: blur(12px);
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
-  background: rgba(0, 0, 0, 0.4);
+  border-top: 2px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 94, 0, 0.4);
   position: fixed;
   display: flex;
   bottom: 0;
+}
+body .cripto-tracker {
+  box-shadow: 12px 6px 24px rgba(0, 0, 0, 0.8);
+  gap: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: row;
+  background: rgba(255, 94, 0, 0.4);
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  top: 0;
+  right: 0;
+  margin: 60px;
+  position: fixed;
+  z-index: 5;
+}
+body .cripto-tracker .img-wrapper {
+  padding: 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+body .cripto-tracker .img-wrapper .img {
+  gap: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  min-width: 48px;
+  min-height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
+body .cripto-tracker .img-wrapper .img::after {
+  z-index: -1;
+  content: "";
+  min-width: 48px;
+  min-height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  padding: 2px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+}
+body .cripto-tracker .info {
+  padding: 12px 24px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  gap: 3px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+body .cripto-tracker .info .title {
+  font-size: 12pt;
+}
+body .cripto-tracker .info .price {
+  font-size: 10pt;
 }
 
 @media (max-height: 84pt) {

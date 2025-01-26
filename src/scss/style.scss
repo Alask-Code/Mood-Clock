@@ -8,15 +8,14 @@ body {
   overflow: hidden;
   place-items: center;
   grid-template-columns: 1fr 1fr 1fr;
-  background: rgb(3, 17, 17);
-  // background: url("../assets/images/background.webp");
-  // background-position: center;
-  // background-size: cover;
-  @import "criptoTrackerComponent/criptoTrackerComponent";
+  box-shadow: inset 0px 0px 84px 48px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(135deg, rgb(4, 113, 113), rgb(1, 36, 36));
+
   @import "todoComponent/todo";
   @import "pomodoroTimerComponent/pomodoroTimer";
   @import "centerComponent/center";
   @import "informationComponent/informationComponent";
+  @import "criptoTrackerComponent/criptoTrackerComponent";
 }
 
 @import "compact";

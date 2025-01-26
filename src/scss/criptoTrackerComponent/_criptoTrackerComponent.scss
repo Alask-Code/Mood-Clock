@@ -1,27 +1,46 @@
 @import "../modules/mixins";
 @import "../modules/variables";
+
 .cripto-tracker {
-  @include flex(24px, row, center, center);
+  box-shadow: 12px 6px 24px rgba(0, 0, 0, 0.8);
+
+  @include flex(0, row, stretch, center);
+  @include cardComponent($br-g, $background-color, $border-color);
   top: 0;
   right: 0;
-  margin: 24px;
+  margin: 60px;
   position: fixed;
-  padding: 24px;
-  border-radius: $br-g;
-  backdrop-filter: blur(12px);
-
-  background: $background-color;
-  border: 2px solid $border-color;
-  .img {
-    @include flex(0, row, center, center);
-
-    @include squareSize(72px);
-    border-radius: 100%;
-    background: $border-color;
+  z-index: 5;
+  .img-wrapper {
+    padding: 12px;
+    border-right: 1px solid $border-color;
+    .img {
+      @include flex(0, row, center, center);
+      @include squareSize(48px);
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%;
+      &::after {
+        z-index: -1;
+        content: "";
+        @include squareSize(48px);
+        padding: 2px;
+        border-radius: 50%;
+        background: $border-color;
+      }
+    }
   }
   .info {
+    padding: 12px 24px;
+    padding-left: 12px;
+    border-left: 1px solid $border-color;
+
+    @include flex(3px, column, start, center);
     .title {
-      font-size: 24pt;
+      font-size: 12pt;
+    }
+    .price {
+      font-size: 10pt;
     }
   }
 }
