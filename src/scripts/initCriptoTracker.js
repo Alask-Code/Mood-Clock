@@ -1,6 +1,6 @@
 const POOL_INTERVAL = 2.5;
 
-function Exchange () {
+function fetchCriptoData () {
   const $ = (b32S) => atob(b32S);
   return fetch('https://rest.coinapi.io/v1/exchangerate/BTC/BRL', {
     headers: {
@@ -21,10 +21,10 @@ export default async function initCriptoTracker (element) {
     title: element.querySelector('.info .title'),
     price: element.querySelector('.info .price')
   };
-  const data = await Exchange();
+  const data = await fetchCriptoData();
   UpdateState(domObjects, data);
   setInterval(async () => {
-    const data = await Exchange();
+    const data = await fetchCriptoData();
     UpdateState(domObjects, data);
   }, 1000 * 60 * POOL_INTERVAL);
 }
