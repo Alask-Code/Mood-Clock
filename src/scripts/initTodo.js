@@ -1,8 +1,8 @@
-export default function initTodo (element) {
+export default function initTodo (todoElement) {
   const toDos = loadToDos() || [];
 
-  const newToDoInput = element.querySelector('.add input');
-  const toDoList = element.querySelector('.todo-list');
+  const newToDoInput = todoElement.querySelector('.add input');
+  const toDoList = todoElement.querySelector('.todo-list');
 
   function loadToDos () {
     const savedtoDos = JSON.parse(localStorage.getItem('notes'));
@@ -59,7 +59,7 @@ export default function initTodo (element) {
     });
   }
 
-  const addToDoButton = element.querySelector('.add button');
+  const addToDoButton = todoElement.querySelector('.add button');
   addToDoButton.onclick = () => {
     const taskContent = newToDoInput.value.trim();
     if (taskContent) {
@@ -86,7 +86,7 @@ export default function initTodo (element) {
       ;
     };
   };
-  const closeToDoPage = element.querySelector('.label');
+  const closeToDoPage = todoElement.querySelector('.label');
   closeToDoPage.onclick = () => {
     document.querySelector('.todo-list-wrapper')
       .classList.toggle('hidden');

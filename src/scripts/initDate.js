@@ -1,4 +1,4 @@
-export default function initDate (element) {
+export default function initDate (dateElement) {
   const date = new Date().toLocaleDateString(
     'pt-BR',
     {
@@ -9,8 +9,8 @@ export default function initDate (element) {
 
     }
   );
-  element.innerHTML = date;
+  dateElement.innerHTML = date;
   setInterval(() => {
-    element.innerHTML = date;
+    dateElement.innerHTML = date;
   }, 2500);
 }

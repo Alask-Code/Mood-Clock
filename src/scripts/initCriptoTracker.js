@@ -18,11 +18,11 @@ function UpdateState (elementTree, data) {
   image.style.backgroundImage = 'url("https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_256/4caf2b16a0174e26a3482cea69c34cba.png")';
 }
 
-export default async function initCriptoTracker (element) {
+export default async function initCriptoTracker (criptoTrackerElement) {
   const domObjects = {
-    image: element.querySelector('.img'),
-    title: element.querySelector('.info .title'),
-    price: element.querySelector('.info .price')
+    image: criptoTrackerElement.querySelector('.img'),
+    title: criptoTrackerElement.querySelector('.info .title'),
+    price: criptoTrackerElement.querySelector('.info .price')
   };
   const data = await fetchCriptoData();
   UpdateState(domObjects, data);

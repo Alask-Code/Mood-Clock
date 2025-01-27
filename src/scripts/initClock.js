@@ -1,4 +1,4 @@
-const updateInterval = 0.25; // Measured in seconds
+const INTERVAL_SECONDS = 0.25;
 
 function updateState (element) {
   const timestamp = new Date();
@@ -8,7 +8,7 @@ function updateState (element) {
     .split('GMT', 1);
 }
 
-export default function initClock (element) {
-  updateState(element);
-  setInterval(updateState, updateInterval * 1000, element);
+export default function initClock (clockElement) {
+  updateState(clockElement);
+  setInterval(updateState, INTERVAL_SECONDS * 1000, clockElement);
 }
