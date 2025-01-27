@@ -18,10 +18,10 @@
   max-height: $height;
 }
 @mixin squareSize($size) {
-  min-width: $size;
-  min-height: $size;
-  max-width: $size;
-  max-height: $size;
+  min-width: $size !important;
+  min-height: $size !important;
+  max-width: $size !important;
+  max-height: $size !important;
 }
 @mixin cardComponent($bd, $bg-color, $bd-color) {
   background: $bg-color;

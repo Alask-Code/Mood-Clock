@@ -79,7 +79,7 @@ body .todo .label:hover {
 body .todo .todo-list-wrapper {
   box-shadow: 12px 6px 24px rgba(0, 0, 0, 0.8);
   width: 320px;
-  height: 500px;
+  height: 530px;
   background: rgba(255, 94, 0, 0.4);
   border-radius: 12px;
   -webkit-backdrop-filter: blur(12px);
@@ -329,10 +329,10 @@ body .cripto-tracker .img-wrapper .img {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  min-width: 48px;
-  min-height: 48px;
-  max-width: 48px;
-  max-height: 48px;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
   background-position: center;
   background-size: cover;
   border-radius: 50%;
@@ -340,10 +340,10 @@ body .cripto-tracker .img-wrapper .img {
 body .cripto-tracker .img-wrapper .img::after {
   z-index: -1;
   content: "";
-  min-width: 48px;
-  min-height: 48px;
-  max-width: 48px;
-  max-height: 48px;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
   padding: 2px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.4);
@@ -392,10 +392,15 @@ body .cripto-tracker .info .price {
 @media (max-width: 810px) {
   body {
     display: flex;
-    position: relative;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+  }
+  .cripto-tracker {
+    transform: scale(0.9);
+    top: 112px !important;
+    right: unset !important;
+    z-index: 1 !important;
   }
   .todo {
     z-index: 2;
@@ -418,6 +423,6 @@ body .cripto-tracker .info .price {
     flex-direction: column-reverse;
   }
   .information {
-    display: none;
+    justify-content: space-between !important;
   }
 }

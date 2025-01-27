@@ -20,7 +20,7 @@
   .todo-list-wrapper {
     box-shadow: 12px 6px 24px rgba(0, 0, 0, 0.8);
 
-    @include size(320px, 500px);
+    @include size(320px, 530px);
     @include cardComponent($br-g, $background-color, $border-color);
     overflow: hidden;
     transition: 0.5s $cubicBezier;
