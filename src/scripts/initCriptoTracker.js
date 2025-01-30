@@ -6,7 +6,7 @@ function fetchCriptoData () {
     headers: {
       'X-CoinAPI-Key': $('NmRjMzg0NDMtZDkwMC00NzQ5LWJkYWQtZTNkMzU4ZWE1MWVm')
     }
-  }).then(res => res.json());
+  }).then((res) => res.json());
 }
 function UpdateState (elementTree, data) {
   const { title, price, image } = elementTree;
@@ -15,7 +15,8 @@ function UpdateState (elementTree, data) {
     currency: 'brl',
     style: 'currency'
   });
-  image.style.backgroundImage = 'url("https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_256/4caf2b16a0174e26a3482cea69c34cba.png")';
+  image.style.backgroundImage =
+    'url("https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_256/4caf2b16a0174e26a3482cea69c34cba.png")';
 }
 
 export default async function initCriptoTracker (criptoTrackerElement) {
@@ -26,6 +27,7 @@ export default async function initCriptoTracker (criptoTrackerElement) {
   };
   const data = await fetchCriptoData();
   UpdateState(domObjects, data);
+  criptoTrackerElement.classList.remove('disabled');
   setInterval(async () => {
     const data = await fetchCriptoData();
     UpdateState(domObjects, data);
