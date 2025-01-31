@@ -18,6 +18,7 @@
     }
   }
   .todo-list-wrapper {
+    z-index: 5;
     box-shadow: 12px 6px 24px rgba(0, 0, 0, 0.8);
 
     @include size(320px, 530px);
@@ -59,7 +60,7 @@
       @include size(100%, 100%);
       overflow: auto;
       line-height: 32pt;
-      padding-bottom: 160px;
+      padding-bottom: 80px;
       .todo-item {
         @include flex(6px, row, start, start);
         font-size: 14pt;

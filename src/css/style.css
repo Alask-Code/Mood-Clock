@@ -49,7 +49,8 @@ body {
   place-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   box-shadow: inset 0px 0px 84px 48px rgba(0, 0, 0, 0.8);
-  background: linear-gradient(135deg, rgb(4, 113, 113), rgb(1, 36, 36));
+  background: linear-gradient(135deg, rgb(26, 39, 43), rgb(1, 21, 32));
+  @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 }
 body .todo {
   gap: 9px;
@@ -77,6 +78,7 @@ body .todo .label:hover {
   background: rgba(255, 94, 0, 0.4);
 }
 body .todo .todo-list-wrapper {
+  z-index: 5;
   box-shadow: 12px 6px 24px rgba(0, 0, 0, 0.8);
   width: 320px;
   height: 530px;
@@ -128,7 +130,7 @@ body .todo .todo-list-wrapper .todo-list {
   height: 100%;
   overflow: auto;
   line-height: 32pt;
-  padding-bottom: 160px;
+  padding-bottom: 80px;
 }
 body .todo .todo-list-wrapper .todo-list .todo-item {
   gap: 6px;
@@ -363,6 +365,58 @@ body .cripto-tracker .info .title {
 }
 body .cripto-tracker .info .price {
   font-size: 10pt;
+}
+body * {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: rgb(255, 237, 157);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono";
+}
+body *::-moz-placeholder {
+  color: rgb(255, 237, 157);
+}
+body *::placeholder {
+  color: rgb(255, 237, 157);
+}
+body html,
+body body {
+  width: 100%;
+  height: 100%;
+}
+body .disabled {
+  display: none !important;
+}
+body .mood-background {
+  width: 100%;
+  height: 100%;
+  gap: 0;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  flex-direction: row;
+  z-index: -1;
+  position: fixed;
+}
+body .mood-background .land,
+body .mood-background .land-2 {
+  width: 1280px;
+  height: 440px;
+  box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.75);
+  border-radius: 75%;
+  transform: translateY(330px) scale(1.6);
+}
+body .mood-background .land {
+  z-index: 1;
+  background: greenyellow;
+}
+body .mood-background .land-2 {
+  background: green;
 }
 
 @media (max-height: 84pt) {
