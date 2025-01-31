@@ -3,21 +3,15 @@
 .mood-background {
   @include size(100%, 100%);
   @include flex(0, row, end, center);
-  // // background: red;
+  background: linear-gradient(180deg, rgb(89, 0, 255), rgb(255, 220, 155) 60%);
   z-index: -1;
   position: fixed;
-  .land,
-  .land-2 {
-    @include size(1280px, 440px);
-    box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.75);
-    border-radius: 75%;
-    transform: translateY(330px) scale(1.6);
-  }
-  .land {
-    z-index: 1;
-    background: greenyellow;
-  }
-  .land-2 {
-    background: green;
+  .landscape {
+    @include size(100%, 100%);
+
+    background-image: url("../../assets/images/landscape.png");
+    background-size: cover;
+    background-position: center;
+    filter: drop-shadow(0px 0px 12px rgb(255, 236, 66));
   }
 }
