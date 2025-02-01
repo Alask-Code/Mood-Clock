@@ -1,9 +1,18 @@
 @import "../modules/reset";
 @import "../modules/mixins";
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .mood-background {
   @include size(100%, 100%);
   @include flex(0, row, end, center);
-  background: linear-gradient(180deg, rgb(89, 0, 255), rgb(255, 220, 155) 60%);
   z-index: -1;
   position: fixed;
   .landscape {
@@ -14,15 +23,25 @@
     background-position: center;
     filter: drop-shadow(0px 0px 12px rgb(255, 236, 66));
   }
-  .sun {
-    @include squareSize(200px);
+  .cycle {
     position: fixed;
+    animation: rotate 30s infinite linear;
     inset: 0;
-    top: 40%;
-    left: calc(50% - 100px);
-    z-index: -1;
-    border-radius: 100%;
-    background: rgb(255, 255, 152);
-    box-shadow: 0px 0px 36px 48px rgb(255, 255, 152);
+    gap: 600px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .sun {
+    border-radius: 50%;
+    @include squareSize(200px);
+    background: rgb(255, 255, 0);
+    box-shadow: 0px 0px 100px 720px rgb(255, 255, 167);
+  }
+  .moon {
+    border-radius: 50%;
+    @include squareSize(200px);
+    background: rgb(0, 200, 255);
+    box-shadow: 0px 0px 100px 0px rgb(7, 0, 11);
   }
 }

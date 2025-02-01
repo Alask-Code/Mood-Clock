@@ -49,7 +49,7 @@ body {
   place-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   box-shadow: inset 0px 0px 84px 48px rgba(0, 0, 0, 0.8);
-  background: linear-gradient(135deg, rgb(26, 39, 43), rgb(1, 21, 32));
+  background: rgb(255, 192, 67);
   @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 }
 body .todo {
@@ -265,24 +265,19 @@ body .center {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  color: black;
   text-shadow: 0px 0px 48px rgba(0, 0, 0, 0.8);
 }
-body .center::after {
-  z-index: -1;
-  content: "";
-  filter: blur(84px);
-  position: fixed;
-  background: rgba(0, 0, 0, 0.8);
-  width: 20%;
-  height: 20%;
-}
 body .date {
+  color: black;
   text-transform: capitalize;
 }
 body .clock {
   font-size: 48pt;
+  color: black;
 }
 body .phrase {
+  color: black;
   cursor: pointer;
 }
 body .phrase.animate {
@@ -392,6 +387,14 @@ body body {
 body .disabled {
   display: none !important;
 }
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 body .mood-background {
   width: 100%;
   height: 100%;
@@ -400,7 +403,6 @@ body .mood-background {
   align-items: end;
   justify-content: center;
   flex-direction: row;
-  background: linear-gradient(180deg, rgb(89, 0, 255), rgb(255, 220, 155) 60%);
   z-index: -1;
   position: fixed;
 }
@@ -412,19 +414,32 @@ body .mood-background .landscape {
   background-position: center;
   filter: drop-shadow(0px 0px 12px rgb(255, 236, 66));
 }
+body .mood-background .cycle {
+  position: fixed;
+  animation: rotate 30s infinite linear;
+  inset: 0;
+  gap: 600px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 body .mood-background .sun {
+  border-radius: 50%;
   min-width: 200px !important;
   min-height: 200px !important;
   max-width: 200px !important;
   max-height: 200px !important;
-  position: fixed;
-  inset: 0;
-  top: 40%;
-  left: calc(50% - 100px);
-  z-index: -1;
-  border-radius: 100%;
-  background: rgb(255, 255, 152);
-  box-shadow: 0px 0px 36px 48px rgb(255, 255, 152);
+  background: rgb(255, 255, 0);
+  box-shadow: 0px 0px 100px 720px rgb(255, 255, 167);
+}
+body .mood-background .moon {
+  border-radius: 50%;
+  min-width: 200px !important;
+  min-height: 200px !important;
+  max-width: 200px !important;
+  max-height: 200px !important;
+  background: rgb(0, 200, 255);
+  box-shadow: 0px 0px 100px 0px rgb(7, 0, 11);
 }
 
 @media (max-height: 84pt) {

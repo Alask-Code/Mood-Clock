@@ -5,7 +5,11 @@ import randomPhrase from './scripts/randomPhrase.js';
 import initTodo from './scripts/initTodo.js';
 import initPomodoro from './scripts/initPomodoro.js';
 import initCriptoTracker from './scripts/initCriptoTracker.js';
+import initMoodBackground from './scripts/initMoodBackground.js';
 async function App () {
+  const domMoodBackground = document.querySelector('.mood-background');
+  initMoodBackground(domMoodBackground);
+
   const domCriptoTracker = document.querySelector('.cripto-tracker');
   initCriptoTracker(domCriptoTracker);
 
