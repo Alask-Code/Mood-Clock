@@ -4,7 +4,7 @@ function fetchCriptoData () {
   const $ = (b32S) => atob(b32S);
   return fetch('https://rest.coinapi.io/v1/exchangerate/BTC/BRL', {
     headers: {
-      'X-CoinAPI-Key': $('NmRjMzg0NDMtZDkwMC00NzQ5LWJkYWQtZTNkMzU4ZWE1MWVm')
+      'X-CoinAPI-Key': $('MzQ3MjI0ZjQtNDQwZi00ZTcwLWI3MzctNDRlOTRmOGUyM2Q4')
     }
   }).then((res) => res.json());
 }
