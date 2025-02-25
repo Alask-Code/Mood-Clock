@@ -2,7 +2,7 @@ O **Mood Clock** é uma aplicação web que combina funcionalidades de lista de 
 
 ## Futura Atualização
 - **IA**: Chatbox com Gemini, do Google.
-  - **Data**: ??/02/2025
+  - **Data**: ??/??/2025
 
 - **Criptomoedas**: Um Display de Criptomoedas na tela, exibindo preço atual.
   - **Data**: 26/01/2025
