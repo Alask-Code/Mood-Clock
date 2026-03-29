@@ -2,7 +2,6 @@
   "license": "MIT",
   "version": "1.0.4",
   "name": "mood-clock",
-  "main": "elec/main.js",
   "author": "Alask-Code",
   "description": "Simple Clock with touch in soul phrases",
   "devDependencies": {
