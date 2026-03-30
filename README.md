@@ -1,12 +1,4 @@
-O **Mood Clock** é uma aplicação web que combina funcionalidades de lista de tarefas (*to-do list*), temporizador Pomodoro e um relógio, auxiliando na gestão de tempo e produtividade.
-
-## Futura Atualização
-- **IA**: Chatbox com Gemini, do Google.
-  - **Data**: ??/??/2025
-
-- **Criptomoedas**: Um Display de Criptomoedas na tela, exibindo preço atual.
-  - **Data**: 26/01/2025
----
+O **Mood Clock** é uma aplicação web que combina funcionalidades de lista de tarefas (*to-do list*), temporizador Pomodoro e um relógio, auxiliando na gestão de tempo e produtividade
 
 ## Funcionalidades
 
